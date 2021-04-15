@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.2" halcon_version="13.0.3">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_update_off ()</l>
+<l>dev_close_window ()</l>
+<l>dev_open_window (0, 0, 600, 400, 'black', WindowHandle)</l>
+<c></c>
+<c></c>
+<l>list_files ('tests', 'files', Files)</l>
+<c></c>
+<c></c>
+<l>for Index := 0 to |Files|-1 by 1</l>
+<l>    gen_rectangle1 (ROI_0, 782.86, 1185.25, 1069.58, 1252.57)</l>
+<c></c>
+<c></c>
+<l>    read_image (Image, Files[Index])</l>
+<c>    </c>
+<l>    reduce_domain (Image, ROI_0, ImageReduced)</l>
+<l>    dev_display (ImageReduced)</l>
+<c>    </c>
+<c>    </c>
+<c>    </c>
+<l>    regiongrowing (ImageReduced, Regions, 3, 3, 5, 100)</l>
+<c>    </c>
+<l>    convexity (Regions, Convexity)</l>
+<c>        </c>
+<l>    stop()</l>
+<c>    </c>
+<c>    </c>
+<c>    </c>
+<l>endfor</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>
